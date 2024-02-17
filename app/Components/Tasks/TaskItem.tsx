@@ -7,10 +7,10 @@ import formatDate from "@/app/utils/formatDate";
 
 interface Props{
     title: string;
-    description: string;
-    date: string;
-    isCompleted: boolean;
-    id: string;
+    description: string,
+    date: string,
+    isCompleted: boolean,
+    id: string, 
 }
 
 function TaskItem({ title, description, date, isCompleted, id } : Props){
@@ -23,20 +23,23 @@ function TaskItem({ title, description, date, isCompleted, id } : Props){
             <div className="footer">
                 {isCompleted ? (
                     <button className="completed"
-                            onClick={()=>{
-                                const task ={
+                            onClick={() => {
+                                const task={
                                     id,
-                                    isCompleted:!isCompleted,
+                                    isCompleted: !isCompleted,
                                 };
 
                                 updateTask(task);
                             }}>
-                                Completed
-                            </button>
-                ):(
-                    <button className="incomplete"
-                    onClick={()=>{
-                        const task ={
+
+                        Completed 
+
+                    </button>
+
+                ) : (
+                    <button className="incomplete" 
+                    onClick={() =>{
+                        const task={
                             id,
                             isCompleted: !isCompleted,
                         };
@@ -44,17 +47,17 @@ function TaskItem({ title, description, date, isCompleted, id } : Props){
                         updateTask(task);
                     }}
                     >
-                       Incomplete
+
+                     Incomplete 
+
                     </button>
                 )}
                 <button className="edit">{edit}</button>
-                <button
-                className="delete"
-                onClick={() =>{
-                    deleteTask(id);
-                }}
-                >
-                {trash}
+                <button className="delete"
+                        onClick={() =>{
+                            deleteTask(id);
+                        }}>
+                            {trash}
                 </button>
             </div>
         </TaskItemStyled>
@@ -114,7 +117,7 @@ const TaskItemStyled = styled.div`
     .completed {
         background: ${(props) => props.theme.colorGreenDark} !important;
     }
-    } 
+    }
     `;
 
 export default TaskItem;
