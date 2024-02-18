@@ -6,14 +6,14 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import styled from "styled-components";
 import Button from "../Button/Button";
-import { add, plus } from "@/app/utils/Icons";
+import { add, plus } from "@/app/utils/icons";
 
 function CreateContent(){
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState();
     const [date, setDate] = useState();
     const [completed, setCompleted] = useState(false);
-    const [important, setImportant] = useState(flase);
+    const [important, setImportant] = useState(false);
     
     const { theme, allTasks, closeModal } = useGlobalState();
 
