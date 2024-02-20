@@ -9,7 +9,6 @@ import Modal from "../Modals/Modal";
 import { add, plus } from "@/app/utils/icons"
 
 
-
 interface Props{
     title: string;
     tasks: any[];
